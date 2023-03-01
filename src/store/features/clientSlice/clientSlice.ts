@@ -14,7 +14,11 @@ const clientSlice = createSlice({
       userName: action.payload.userName,
       isLogged: true,
     }),
-    logOutClient: (currentClientState: Client) => ({ ...initialStateClient }),
+    logOutClient: (currentClientState: Client) => ({
+      ...currentClientState,
+      userName: "",
+      isLogged: false,
+    }),
   },
 });
 
